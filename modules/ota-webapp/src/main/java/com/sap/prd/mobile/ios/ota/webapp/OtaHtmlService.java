@@ -95,7 +95,10 @@ public class OtaHtmlService extends HttpServlet
               new URL(params.get(KEY_REFERER));
 
         LOG.fine("Sending QRCode for " + htmlServiceUrl.toString());
-        sendQRCode(request, response, htmlServiceUrl.toString(), getMatrixToImageConfig(request),
+        String url = htmlServiceUrl.toString();
+        url = UrlShortenService.shorten(request, url);
+        LOG.fine("   QRCode URL shortened to " + url);
+        sendQRCode(request, response, url, getMatrixToImageConfig(request),
               new Dimension(400, 400));
 
       }

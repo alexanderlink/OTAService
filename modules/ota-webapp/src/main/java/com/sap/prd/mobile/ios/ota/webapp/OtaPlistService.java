@@ -93,6 +93,8 @@ public class OtaPlistService extends HttpServlet
         String plistUrl = generatePlistRequestUrl(getPlistServiceBaseUrl(request), params).toExternalForm();
         String data = plistUrl + "?action=itmsRedirect";
         LOG.fine("Sending QRCode for " + data);
+        data = UrlShortenService.shorten(request, data);
+        LOG.fine("   QRCode URL shortened to " + data);
         sendQRCode(request, response, data, getMatrixToImageConfig(request), new Dimension(400, 400));
 
       }

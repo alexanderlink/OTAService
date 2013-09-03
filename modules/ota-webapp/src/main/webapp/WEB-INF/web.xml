@@ -35,6 +35,10 @@
         <servlet-name>otaPlistService</servlet-name>
         <servlet-class>com.sap.prd.mobile.ios.ota.webapp.OtaPlistService</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>urlShortenService</servlet-name>
+        <servlet-class>com.sap.prd.mobile.ios.ota.webapp.UrlShortenService</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>otaHtmlService</servlet-name>
         <url-pattern>/HTML/*</url-pattern>
@@ -42,5 +46,9 @@
     <servlet-mapping>
         <servlet-name>otaPlistService</servlet-name>
         <url-pattern>/PLIST/*</url-pattern>
+    </servlet-mapping>  
+    <servlet-mapping>
+        <servlet-name>urlShortenService</servlet-name>
+        <url-pattern>/URL/*</url-pattern>
     </servlet-mapping>  
 </web-app>
